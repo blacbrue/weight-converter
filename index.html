@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://jaydenkoh.github.io/logo2.png">
+    <script id="dsq-count-scr" src="//jaydenkoh-github-io.disqus.com/count.js" async></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="scrollUpButton.css" media="all" />
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="scrollUpButton.js"></script>
+</head>
+<body>
+   <!--smooth scroll jquery-->
+    <script>
+        $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+    
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+    
+            // Store hash
+            var hash = this.hash;
+    
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+    
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+        });
+        </script>
+
+    <!--Pounds to KG-->
+    <h1 style="text-decoration: underline;font-family: 'Amatic SC', cursive;" id="top">Weight Converter</h1>
+    <hr>
+
+      <h2 style="text-decoration: underline;">Tables of Content</h2>
+      <h3>Pounds to _______</h3>
+      <ul>
+          <li><a href="#pounds-to-kg" class="tocA">Pounds to Kilograms (KG)</a></li>
+          <br>
+          <li><a href="#pounds-to-grams" class="tocA">Pounds to Grams</a></li>
+          </div>
+      </ul>
+          <h3>Kilograms to _______</h3>
+      <ul>
+          <li><a href="#kg-to-pounds" class="tocA">Kilograms (KG) to Pounds</a></li>
+          <br>
+          <li><a href="#kg-to-grams" class="tocA">Kilograms (KG) to Grams</a></li>
+      </ul>
+        <h3>Grams to _______</h3>
+        <ul>
+          <li><a href="#grams-to-pounds" class="tocA">Grams to Pounds</a></li>
+          <br>
+          <li><a href="#grams-to-kg" class="tocA">Grams to Kilograms (KG)</a></li>
+      </ul>
+      <hr>
+      <a href="#disqus_thread" class="tocA"></a>
+      <br>
+      <br>
+      <a href="#comments" class="tocA">Go to the comments</a>
+    <hr>
+
+    <!--pounds to kg-->
+
+    <h2 id="pounds-to-kg">Pounds to Kilograms</h2>
+    <p>Type a value in the Pounds field to convert the value to Kilograms:</p>
+
+    <p>
+        <label>Pounds: </label>
+        <input id="inputPounds" type="number" placeholder="Pounds"
+        oninput="PTKG(this.value)" onchange="PTKG(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Kilograms: <span id="outputKG"></span></p>
+
+      <!--Script for Pnds to KG-->
+      <script>
+          function PTKG(valNum) {
+          document.getElementById("outputKG").innerHTML = valNum / 2.2046;
+          }
+      </script>
+
+      <!--pounds to grams-->
+
+      <h2 id="pounds-to-grams">Pounds to Grams</h2>
+      <p>Type a value in the Pounds field to convert the value to Grams:</p>
+
+      <p>
+        <label>Pounds: </label>
+        <input id="inputPounds" type="number" placeholder="Pounds"
+        oninput="PTG(this.value)" onchange="PTG(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Grams: <span id="outputGram"></span></p>
+
+      <!--Script for Pnds to grams-->
+      <script>
+          function PTG(valNum) {
+          document.getElementById("outputGram").innerHTML = valNum / 0.0022046;
+          }
+      </script>
+
+      <hr>
+
+      <!--kg to pounds-->
+
+      <h2 id="kg-to-pounds">Kilograms to Pounds</h2>
+      <p>Type a value in the Kilograms field to convert the value to Pounds:</p>
+
+      <p>
+        <label>Kilograms: </label>
+        <input id="inputPounds" type="number" placeholder="Kilograms"
+        oninput="KGTP(this.value)" onchange="KGTP(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Pounds: <span id="outputPounds"></span></p>
+
+      <!--Script for kg to pounds-->
+      <script>
+          function KGTP(valNum) {
+          document.getElementById("outputPounds").innerHTML = valNum * 2.2046;
+          }
+      </script>
+      
+      <!--kg to grams-->
+
+      <h2 id="kg-to-grams">Kilograms to Grams</h2>
+      <p>Type a value in the Kilograms field to convert the value to Grams:</p>
+
+      <p>
+        <label>Kilograms: </label>
+        <input id="inputPounds" type="number" placeholder="Kilograms"
+        oninput="KGTG(this.value)" onchange="KGTG(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Grams: <span id="outputKGTG"></span></p>
+
+      <!--Script for kg to grans-->
+      <script>
+          function KGTG(valNum) {
+          document.getElementById("outputKGTG").innerHTML = valNum * 1000;
+          }
+      </script>
+
+      <hr>
+
+      <!--grams to pounds-->
+
+      <h2 id="grams-to-pounds">Grams To Pounds</h2>
+      <p>Type a value in the Grams field to convert the value to Pounds:</p>
+
+      <p>
+        <label>Grams: </label>
+        <input id="inputPounds" type="number" placeholder="Grams"
+        oninput="GTP(this.value)" onchange="GTP(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Pounds: <span id="outputGTP"></span></p>
+
+      <!--Script for grams to pounds-->
+      <script>
+          function GTP(valNum) {
+          document.getElementById("outputGTP").innerHTML = valNum * 0.0022046;
+          }
+      </script>
+
+      <!--grams to kg-->
+
+      <h2 id="grams-to-kg">Grams To Kilograms</h2>
+      <p>Type a value in the Grams field to convert the value to Kilograms:</p>
+
+      <p>
+        <label>Grams: </label>
+        <input id="inputPounds" type="number" placeholder="Grams"
+        oninput="GTKG(this.value)" onchange="GTKG(this.value)" style="width: 50%;
+        padding: 12px 5px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;">
+      </p>
+      <p>Kilograms: <span id="outputGTKG"></span></p>
+
+      <!--Script for grams to KG-->
+      <script>
+          function GTKG(valNum) {
+          document.getElementById("outputGTKG").innerHTML = valNum / 1000;
+          }
+      </script>
+
+      <hr>
+
+      <h1 id="comments">Comments Section</h1>
+
+      <!--disqus comment section-->
+
+      <div id="disqus_thread"></div>
+      <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jaydenkoh-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <script>
+      $(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollUpButton').fadeIn();
+            } else {
+                $('.scrollUpButton').fadeOut();
+            }
+        });
+        $('.scrollUpButton').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+    });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
+      <a href="#" class="scrollUpButton">&#9650</a>
+
+</body>
+</html>
